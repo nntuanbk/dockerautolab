@@ -1,0 +1,4 @@
+FROM python
+RUN pip install requests
+COPY  ./Res /home/myapp/res/
+CMD python3 /home/myapp/res/post.py

@@ -1,0 +1,14 @@
+---
+- name: AUTOMATIC BACKUP OF RUNNING-CONFIG
+  hosts: CSR1kv
+  gather_facts: false
+  connection: local
+ 
+  tasks:
+   - name: STATIC ROUTING CONFIGURATION
+     ios_command:
+       commands:
+         - enable
+         - configure terminal
+         - ip route 172.16.1.0 255.255.255.0 100.0.0.1  
+     register: config
